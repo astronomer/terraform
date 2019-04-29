@@ -1,1 +1,32 @@
 # .drone.yml file
+
+kind: pipeline
+name: default
+steps:
+- name: Deploy
+  image: alpine
+  environment:
+    TF_VAR_region:
+      from_secret:
+    TF_VAR_zone:
+      from_secret:
+    TF_VAR_project:
+      from_secret:
+    TF_VAR_cluster_name:
+      from_secret:
+    TF_VAR_machine_type:
+      from_secret:
+    TF_VAR_min_node_count:
+      from_secret:
+    TF_VAR_max_node_count:
+      from_secret:
+    TF_VAR_node_version:
+      from_secret:
+    TF_VAR_gke_secondary_ip_ranges_pods:
+      from_secret:
+    TF_VAR_gke_secondary_ip_ranges_services:
+      from_secret:
+    TF_VAR_bastion_admins:
+      from_secret:
+    TF_VAR_bastion_users:
+      from_secret:
