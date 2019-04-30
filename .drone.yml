@@ -1,4 +1,5 @@
 # .drone.yml file
+# test
 
 pipeline:
   apply:
