@@ -3,7 +3,7 @@
 pipeline:
   apply:
     image: alpine
-    secrets: [ tf_var_region, tf_var_zone, tf_var_project, tf_var_cluster_name, 
+    secrets: [ test, tf_var_region, tf_var_zone, tf_var_project, tf_var_cluster_name, 
                tf_var_machine_type, tf_var_min_node_count, tf_var_max_node_count,
                tf_var_node_version, tf_var_gke_secondary_ip_ranges_pods,
                tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
