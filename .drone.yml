@@ -4,9 +4,9 @@ pipeline:
   apply:
     image: alpine
     secrets: [ test ]
-    environment:
-      TEST:
-        from_secret: test
+    # environment:
+    #   TEST:
+    #     from_secret: test
       # TF_VAR_zone:
       #   from_secret: tf_var_zone
       # TF_VAR_project:
@@ -31,4 +31,4 @@ pipeline:
       #   from_secret: tf_var_bastion_users
 
     commands:
-    - echo $TEST
+    - echo $${TEST}
