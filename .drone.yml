@@ -20,3 +20,4 @@ pipeline:
     - export TF_VAR_bastion_admins=$${tf_var_bastion_admins}
     - export TF_VAR_bastion_users=$${tf_var_bastion_users}
     - apk --update add curl
+    - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip"
