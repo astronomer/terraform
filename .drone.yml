@@ -1,5 +1,3 @@
-# .drone.yml file
-
 pipeline:
   terraform:
     image: alpine
@@ -8,31 +6,5 @@ pipeline:
               tf_var_node_version, tf_var_gke_secondary_ip_ranges_pods,
               tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
               tf_var_bastion_users ]
-    # environment:
-    #   TF_VAR_region:
-    #     from_secret: tf_var_region
-      # TF_VAR_zone:
-      #   from_secret: tf_var_zone
-      # TF_VAR_project:
-      #   from_secret: tf_var_project
-      # TF_VAR_cluster_name:
-      #   from_secret: tf_var_cluster_name
-      # - TF_VAR_machine_type=$${TF_VAR_MACHINE_TYPE}
-      # TF_VAR_min_node_count:
-      #   from_secret: tf_var_min_node_count
-      # TF_VAR_max_node_count:
-      #   from_secret: tf_var_max_node_count
-      # TF_VAR_node_version:
-      #   from_secret: tf_var_node_version
-      # TF_VAR_gke_secondary_ip_ranges_pods:
-      #   from_secret: tf_var_gke_secondary_ip_ranges_pods
-      # TF_VAR_gke_secondary_ip_ranges_services:
-      #   from_secret: tf_var_gke_secondary_ip_ranges_services
-      # TF_VAR_bastion_admins:
-      #   from_secret: tf_var_bastion_admins
-      # TF_VAR_bastion_users:
-      #   from_secret: tf_var_bastion_users
-
     commands:
-    - export TF_VAR_region=$${TF_VAR_REGION}
-    - echo $${TEST} $TF_VAR_region
+    - 
