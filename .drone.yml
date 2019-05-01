@@ -3,10 +3,9 @@
 pipeline:
   apply:
     image: alpine
-    secrets: [ tf_var_region ]
     environment:
-      TF_VAR_region:
-        from_secret: tf_var_region
+      TEST:
+        from_secret: test
       # TF_VAR_zone:
       #   from_secret: tf_var_zone
       # TF_VAR_project:
@@ -31,4 +30,4 @@ pipeline:
       #   from_secret: tf_var_bastion_users
 
     commands:
-    - apk --update add curl
+    - echo $TEST
