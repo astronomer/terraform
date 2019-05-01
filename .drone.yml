@@ -1,10 +1,21 @@
 pipeline:
   terraform:
     image: alpine
-    secrets: [ test, tf_var_region, tf_var_zone, tf_var_project, tf_var_cluster_name, 
+    secrets: [ tf_var_region, tf_var_zone, tf_var_project, tf_var_cluster_name, 
               tf_var_machine_type, tf_var_min_node_count, tf_var_max_node_count,
               tf_var_node_version, tf_var_gke_secondary_ip_ranges_pods,
               tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
               tf_var_bastion_users ]
     commands:
-    - 
+    - export TF_VAR_region=$${TF_VAR_REGION}
+    - export TF_VAR_zone=$${tf_var_zone}
+    - export TF_VAR_project=$${tf_var_project}
+    - export TF_VAR_cluster_name=$${tf_var_cluster_name}
+    - export TF_VAR_machine_type=$${tf_var_machine_type}
+    - export TF_VAR_min_node_count=$${tf_var_min_node_count}
+    - export TF_VAR_max_node_count=$${tf_var_max_node_count}
+    - export TF_VAR_node_version=$${tf_var_node_version}
+    - export TF_VAR_gke_secondary_ip_ranges_pods=$${tf_var_gke_secondary_ip_ranges_pods}
+    - export TF_VAR_gke_secondary_ip_ranges_services=$${tf_var_gke_secondary_ip_ranges_services}
+    - export TF_VAR_bastion_admins=$${tf_var_bastion_admins}
+    - export TF_VAR_bastion_users=$${tf_var_bastion_users}
