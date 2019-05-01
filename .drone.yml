@@ -21,4 +21,6 @@ pipeline:
     - export TF_VAR_bastion_users=$${tf_var_bastion_users}
     - apk --update add curl
     - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip"
-    - ls -l
+    - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
+    - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
+    - terraform -v
