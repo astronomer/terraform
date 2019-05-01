@@ -1,7 +1,9 @@
 # .drone.yml file
 
 kind: pipeline
-- name: terraform
+name: terraform
+steps:
+- name: test
   image: alpine
   secrets: [ test, tf_var_region, tf_var_zone, tf_var_project, tf_var_cluster_name, 
               tf_var_machine_type, tf_var_min_node_count, tf_var_max_node_count,
