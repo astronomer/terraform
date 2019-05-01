@@ -35,4 +35,4 @@ pipeline:
       #   from_secret: tf_var_bastion_users
 
     commands:
-    - echo $${TEST} $${tf_var_machine_type}
+    - echo $${TEST} $${TF_VAR_MACHINE_TYPE}
