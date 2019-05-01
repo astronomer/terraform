@@ -30,4 +30,4 @@ pipeline:
       #   from_secret: tf_var_bastion_users
 
     commands:
-    - echo $$TEST
+    - echo $${TEST}
