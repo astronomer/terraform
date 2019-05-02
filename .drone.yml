@@ -24,9 +24,12 @@ pipeline:
     - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip"
     - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
     - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
-    - cd gcp
+    # - cd gcp
+    # - terraform -v
+    # - terraform init
+    # - terraform validate
+    # - terraform apply -auto-approve
+
+  version:
+    commands:
     - terraform -v
-    - terraform init
-    - terraform validate
-    - terraform apply -auto-approve
-    - terraform destroy -auto-approve
