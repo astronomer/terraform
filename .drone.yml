@@ -23,7 +23,7 @@ pipeline:
     - apk --update add curl
     - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip"
     - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
-    - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
+    # - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
     # - cd gcp
     # - terraform -v
     # - terraform init
@@ -33,4 +33,4 @@ pipeline:
   version:
     image: alpine
     commands:
-    - terraform -v
+    - ./terraform -v
