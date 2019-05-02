@@ -1,4 +1,3 @@
-#storage
 pipeline:
   terraform:
     image: alpine
