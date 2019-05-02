@@ -9,7 +9,7 @@ pipeline:
               tf_var_bastion_users ]
     commands:
     - export GOOGLE_APPLICATION_CREDENTIALS=$${google_application_credentials}
-    - export TF_VAR_region=$${tf_var_region}
+    - export TF_VAR_region=$${TF_VAR_REGION}
     - export TF_VAR_zone=$${tf_var_zone}
     - export TF_VAR_project=$${tf_var_project}
     - export TF_VAR_cluster_name=$${tf_var_cluster_name}
