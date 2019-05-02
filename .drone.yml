@@ -27,4 +27,4 @@ pipeline:
     - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
     - terraform -v
     - cd gcp
-    - echo ${TF_VAR_zone}
+    - env
