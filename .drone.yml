@@ -32,7 +32,7 @@ pipeline:
     - export TF_VAR_bastion_admins=$${TF_VAR_BASTION_ADMINS}
     - export TF_VAR_bastion_users=$${TF_VAR_BASTION_USERS}
     
-    - terraform validate
+    - ./terraform validate
     # - terraform apply -auto-approve
 
   version:
