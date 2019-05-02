@@ -6,6 +6,7 @@ pipeline:
     - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip"
     - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
     - export GOOGLE_CREDENTIALS=$${GOOGLE_APPLICATION_CREDENTIALS}
+    - cd gcp
     - ../terraform init
 
 
@@ -30,7 +31,6 @@ pipeline:
     - export TF_VAR_bastion_admins=$${TF_VAR_BASTION_ADMINS}
     - export TF_VAR_bastion_users=$${TF_VAR_BASTION_USERS}
     
-    - cd gcp
     # - terraform validate
     # - terraform apply -auto-approve
 
