@@ -5,6 +5,9 @@ pipeline:
     - apk --update add curl
     - curl --silent --output terraform.zip "https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip"
     - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
+    - export GOOGLE_CREDENTIALS=$${GOOGLE_APPLICATION_CREDENTIALS}
+    - ../terraform init
+
 
   init:
     image: alpine
@@ -14,7 +17,6 @@ pipeline:
               tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
               tf_var_bastion_users ]
     commands:
-    - export GOOGLE_CREDENTIALS=$${GOOGLE_APPLICATION_CREDENTIALS}
     - export TF_VAR_region=$${TF_VAR_REGION}
     - export TF_VAR_zone=$${TF_VAR_ZONE}
     - export TF_VAR_project=$${TF_VAR_PROJECT}
@@ -29,7 +31,6 @@ pipeline:
     - export TF_VAR_bastion_users=$${TF_VAR_BASTION_USERS}
     
     - cd gcp
-    - ../terraform init
     # - terraform validate
     # - terraform apply -auto-approve
 
