@@ -31,8 +31,8 @@ pipeline:
     - export TF_VAR_gke_secondary_ip_ranges_services=$${TF_VAR_GKE_SECONDARY_IP_RANGES_SERVICES}
     - export TF_VAR_bastion_admins=$${TF_VAR_BASTION_ADMINS}
     - export TF_VAR_bastion_users=$${TF_VAR_BASTION_USERS}
-    
-    - ./terraform validate
+    - cd gcp
+    - ../terraform validate
     # - terraform apply -auto-approve
 
   version:
