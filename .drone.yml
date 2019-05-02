@@ -28,3 +28,4 @@ pipeline:
     - terraform -v
     - terraform init
     - terraform validate
+    - terraform plan
