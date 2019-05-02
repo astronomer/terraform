@@ -31,5 +31,6 @@ pipeline:
     # - terraform apply -auto-approve
 
   version:
+    image: alpine
     commands:
     - terraform -v
