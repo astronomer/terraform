@@ -35,4 +35,5 @@ pipeline:
   validate:
     image: alpine
     commands:
+    - cd gcp
     - ./terraform validate
