@@ -25,4 +25,5 @@ pipeline:
     - unzip terraform.zip ; rm -f terraform.zip; chmod +x terraform
     - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
     - terraform -v
+    - cd gcp
     - terraform init
