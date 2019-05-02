@@ -17,6 +17,7 @@ pipeline:
               tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
               tf_var_bastion_users ]
     commands:
+    - apk add --no-cache ca-certificates openssl
     - export GOOGLE_CREDENTIALS=$${GOOGLE_APPLICATION_CREDENTIALS}
     - export TF_VAR_region=$${TF_VAR_REGION}
     - export TF_VAR_zone=$${TF_VAR_ZONE}
