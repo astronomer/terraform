@@ -34,6 +34,9 @@ pipeline:
 
   validate:
     image: alpine
+    secrets: [ tf_var_project, tf_var_cluster_name, tf_var_gke_secondary_ip_ranges_pods,
+              tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
+              tf_var_bastion_users ]
     commands:
     - export TF_VAR_project=$${TF_VAR_PROJECT}
     - export TF_VAR_cluster_name=$${TF_VAR_CLUSTER_NAME}
