@@ -27,3 +27,4 @@ pipeline:
     - cd gcp
     - terraform -v
     - terraform init
+    - terraform validate
