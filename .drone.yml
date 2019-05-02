@@ -7,7 +7,7 @@ pipeline:
               tf_var_gke_secondary_ip_ranges_services, tf_var_bastion_admins, 
               tf_var_bastion_users ]
     commands:
-    - export GOOGLE_APPLICATION_CREDENTIALS=$${GOOGLE_APPLICATION_CREDENTIALS}
+    - export GOOGLE_CREDENTIALS=$${GOOGLE_APPLICATION_CREDENTIALS}
     - export TF_VAR_region=$${TF_VAR_REGION}
     - export TF_VAR_zone=$${TF_VAR_ZONE}
     - export TF_VAR_project=$${TF_VAR_PROJECT}
@@ -26,4 +26,4 @@ pipeline:
     - mkdir -p ${HOME}/bin ; export PATH=${PATH}:${HOME}/bin; mv terraform ${HOME}/bin/
     - cd gcp
     - terraform -v
-    - echo $GOOGLE_APPLICATION_CREDENTIALS
+    - terraform init
