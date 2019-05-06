@@ -1,4 +1,4 @@
-# Terraform for Astronomer for GCP
+# Terraform Module for Astronomer for GCP
 
 [Terraform](https://www.terraform.io/) is a simple and powerful tool that lets us write, plan and create infrastructure as code. This code will allow you to efficiently provision the infrastructure required to run the Astronomer platform.
 
@@ -26,6 +26,19 @@ module "gcp-astro" {
   cluster_name                     = "cloud-dev-cluster"
   gke_secondary_ip_ranges_pods     = "10.32.0.0/14"
   gke_secondary_ip_ranges_services = "10.98.0.0/20"
+}
+```
+
+Use both `google` and `google-beta` providers as few resources use `google-beta` provider too:
+```hcl
+provider google {
+  region  = "${var.region}"
+  project = "${var.project}"
+}
+
+provider google-beta {
+  region  = "${var.region}"
+  project = "${var.project}"
 }
 ```
 
