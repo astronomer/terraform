@@ -1,24 +1,15 @@
-# Terraform for Astronomer for GCP
-
-[Terraform](https://www.terraform.io/) is a simple and powerful tool that lets us write, plan and create infrastructure as code. This code will allow you to efficiently provision the infrastructure required to run the Astronomer platform.
-
-## Features
-* Private Kubernetes cluster
-* Bastion host for secure cluster administration
-
-## Usage
-
-```hcl
 module "gcp-astro" {
   source = "/Users/kaxil/Documents/Astro/Github/terraform/gcp"
 
   bastion_admins = [
     "user:greg@astronomer.io",
+    "user:kaxil@astronomer.io",
     "user:ian@astronomer.io",
   ]
 
   bastion_users = [
     "user:greg@astronomer.io",
+    "user:kaxil@astronomer.io",
     "user:ian@astronomer.io",
   ]
 
@@ -26,4 +17,3 @@ module "gcp-astro" {
   gke_secondary_ip_ranges_pods     = "10.32.0.0/14"
   gke_secondary_ip_ranges_services = "10.98.0.0/20"
 }
-```
